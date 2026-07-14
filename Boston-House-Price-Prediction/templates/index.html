@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Boston House Price Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏠 Boston House Price Predictor</h1>
+
+<p>Predict Boston house prices using Machine Learning</p>
+
+<div class="main">
+
+<div class="card">
+
+<h2>House Details</h2>
+
+<div class="grid">
+
+<input id="CRIM" placeholder="Crime Rate">
+
+<input id="ZN" placeholder="Residential Zone">
+
+<input id="INDUS" placeholder="Industrial Area">
+
+<input id="CHAS" placeholder="Charles River (0/1)">
+
+<input id="NOX" placeholder="Nitric Oxide">
+
+<input id="RM" placeholder="Rooms">
+
+<input id="AGE" placeholder="Age">
+
+<input id="DIS" placeholder="Distance">
+
+<input id="RAD" placeholder="Highways">
+
+<input id="TAX" placeholder="Tax">
+
+<input id="PTRATIO" placeholder="Pupil Teacher Ratio">
+
+<input id="B" placeholder="Black Index">
+
+<input id="LSTAT" placeholder="% Lower Status">
+
+</div>
+
+<button onclick="predictPrice()">
+
+Predict Price
+
+</button>
+
+</div>
+
+<div class="result">
+
+<h2>Estimated Price</h2>
+
+<div id="price">
+
+$0
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
