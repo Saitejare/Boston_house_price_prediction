@@ -56,11 +56,8 @@ def load_model(path):
         with path.open("rb") as model_file:
             return pickle.load(model_file)
     except Exception as exc:
-        print(f"[INFO] Falling back to a new model because the saved model could not be loaded: {exc}")
-        model = train_fallback_model()
-        with path.open("wb") as model_file:
-            pickle.dump(model, model_file)
-        return model
+        print(f"[INFO] Falling back to an in-memory model because the saved model could not be loaded: {exc}")
+        return train_fallback_model()
 
 
 model = load_model(MODEL_PATH)
@@ -74,7 +71,10 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
 
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
+
+    if not data:
+        return jsonify({"error": "No input data provided"}), 400
 
     features = np.array([
         float(data["CRIM"]),
