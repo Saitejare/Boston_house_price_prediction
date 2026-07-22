@@ -211,18 +211,6 @@ The application includes:
 
 ---
 
-## 📷 Screenshots
-
-### Home Page
-
-> Add a screenshot of your application's home page here.
-
-### Prediction Result
-
-> Add a screenshot showing the prediction result.
-
----
-
 ## 📌 Future Enhancements
 
 - Deploy on Render or Railway
@@ -266,8 +254,4 @@ If you found this project helpful, please consider giving it a **⭐ Star** on G
 
 It helps others discover the project and motivates future improvements.
 
----
 
-## 📄 License
-
-This project is intended for educational and learning purposes.
